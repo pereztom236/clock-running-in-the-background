@@ -1,0 +1,27 @@
+// Initialize variables for the clock
+var date = new Date();
+var hour = date.getHours();
+var minute = date.getMinutes();
+var second = date.getSeconds();
+
+// Function to update the clock every second
+function updateClock() {
+  second++;
+  if (second === 60) {
+    second = 0;
+    minute++;
+  }
+  if (minute === 60) {
+    minute = 0;
+    hour++;
+  }
+  if (hour === 24) {
+    hour = 0;
+  }
+
+  // Display the updated time
+  console.log(hour + ":" + minute + ":" + second);
+}
+
+// Set interval to call the updateClock function every 1000 milliseconds (1 second)
+setInterval(updateClock, 1000);
